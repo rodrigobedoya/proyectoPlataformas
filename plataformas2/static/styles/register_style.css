@@ -1,0 +1,56 @@
+
+.simple_register{
+	text-align: center;
+}
+
+#registration{
+	width: 100%;
+	background-color: #051019;
+	opacity: 0.8;
+	padding: 50px 0px;
+	font-family: arial;
+	border: 3px dotted white;
+}
+
+.button{
+	width: 250px;
+	padding: 10px;
+	border-radius: 5px;
+	outline: 0px;
+}
+#txt{
+	color: white;
+	text-align: center;
+	background-color: green;
+	padding: 10px;
+	padding-bottom: 10px;
+	border-radius: 5px;
+}
+
+.input_submit{
+	width: 10%;
+	background-color: green;
+	cursor: pointer;
+	font-size: 19px;
+	font-weight: bold;
+	color: white;
+}
+
+
+label {
+    color:white;
+}
+
+a{
+            color:white;
+            text-decoration: none;
+        }
+        /* mouse over link */
+        a:hover {
+            font-weight: bold;
+        }
+
+        /* selected link */
+        a:active {
+            font-weight: bold;
+        }

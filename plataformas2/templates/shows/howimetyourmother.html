@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>How I Met Your Mother
+</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='styles/show_style.css')}}">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body style="padding-left:20px">
+    <div class = "insertWithJS">
+
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    var showName = 'howimetyourmother';
+$.getJSON("/json/"+showName, function(data){
+         var items = []
+         i = 0
+         $.each(data, function(){
+
+              f = '<h1 style="color:#ffffff">'+data[i]['name']+'</h1>';
+
+              f = f+'<div class="imag">';
+                  f = f+'<img src="' + data[i]['imageurl']+'" alt="Image" width="450" height="400"/>';
+              f = f+'</div>';
+
+              f = f+'<div class="texto">';
+                  f = f+'<p style="color:#ffffff">'+data[i]['description']+'</p>';
+                  f = f+'<div class="ep" style="color: #ffffff">';
+                      f = f+'<h3>Seasons</h3>';
+                          f = f+'<p>'+data[i]['seasons']+'</p>';
+                      f = f+'<h3>Episodes</h3>'
+                          f = f+'<p>'+data[i]['episodes']+'</p>';
+                      f = f+'<h3>Rank</h3>';
+                          f = f+'<p>'+data[i]['rank']+'</p>';
+                      f = f+'<h3>Rating</h3>';
+                          f = f+'<p>'+data[i]['rating']+'</p>';
+                  f = f+'</div>';
+
+                  f = f+'<h3 style="color: #ffffff">Rate</h3>';
+              f = f+' </div>';
+
+              f = f+'<form action=/add method="post">';
+              f = f+'<div class="rating">';
+                  f = f+'<input type="radio" name="star" value="5"  id="star1"><label for="star1"></label>';
+                  f = f+'<input type="radio" name="star" value="4"  id="star2"><label for="star2"></label>';
+                  f = f+'<input type="radio" name="star" value="3"  id="star3"><label for="star3"></label>';
+                  f = f+'<input type="radio" name="star" value="2"  id="star4"><label for="star4"></label>';
+                  f = f+'<input type="radio" name="star" value="1"  id="star5"><label for="star5"></label>';
+              f = f+'</div>';
+              f = f+'<input type="text" name="showName" value="'+data[i]['name']+'" style="margin-left: 5%" readonly>';
+              f = f+'<button style = "float:right;margin-right:5%" type="submit">Send</button>';
+              f = f+'</form>'
+              i = i+1;
+              $( "<div/>", {
+                  html: f
+              }).appendTo( ".insertWithJS" );
+         });
+      });
+</script>
+</body>
+</html>
+

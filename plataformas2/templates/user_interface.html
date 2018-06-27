@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for('static',filename='styles/user_style.css')}}">
+</head>
+<body style="background:black" class="bg">
+
+<div class="topnav">
+  <a class="active" href="/search">Home</a>
+  <a href="/seeRanking">Ranking</a>
+  <a href="/showList">Show All</a>
+  <a href="/">Log Out</a>
+  <div class="search-container">
+    <form action="/search_for_content" method="post">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

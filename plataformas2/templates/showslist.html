@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <style>
+        .title{
+            font-size:60px;
+            font-weight:bold;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+            font-size:30px;
+        }
+        /* mouse over link */
+        a:hover {
+            font-weight: bold;
+        }
+
+        /* selected link */
+        a:active {
+            font-weight: bold;
+        }
+        </style>
+</head>
+<body style="background:black;color:white;padding-left:10px">
+<div class="title">Shows:</div>
+<br>
+    <div class="list">
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $.getJSON("/shows", function(data){
+           var items = []
+           i = 0
+           $.each(data, function(){
+                f = '<div class="show"';
+                f = f + '>';
+                    f = f+' <a href="/s/';
+                    f = f+ data[i]['name'].toLowerCase().replace(/\s/g, "") + '">';
+
+                    f = f+ (i+1).toString()+'. ';
+
+                    f = f+data[i]['name']+'</a>';
+                f = f+' </div><br>';
+                i = i+1;
+                $( "<div/>", {
+                    html: f
+                }).appendTo( ".list" );
+           });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register form</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/register_style.css')}}">
+
+</head>
+<body style="background-color:black">
+	<div class="simple_register">
+		<form action = "/registerUser" method="post" id="registration">
+			<p1 id="txt">Insert an username</p1> <br><br>
+			<input type="text" name="username" class="button" placeholder="Enter your username"><br><br>
+			<p1 id="txt">Insert a new password</p1> <br><br>
+			<input type="password" name="password" class="button" placeholder="Enter your password"><br><br>
+			<p1 id="txt">Confirm your password</p1> <br><br>
+			<input type="password" name="copassword" class="button" placeholder="Confirm your password"><br><br>
+			<p1 id="txt">Insert an email</p1> <br><br>
+			<input type="email" name="email" class="button" placeholder="Enter your email"><br><br>
+			<p1 id="txt">Security question</p1> <br><br>
+			<select name="question">
+				<option value="Where are you from?">Where are you from?</option>
+				<option value="What's your dog's name?">What's your dog's name?</option>
+				<option value="What's your favorite song?">What's your favorite song?</option>
+				<option value="Where did you go to high school?">Where did you go to high school?</option>
+			</select> <br><br>
+			<p1 id="txt">Security Answer</p1> <br><br>
+			<input type="text" name="answer" class="button" placeholder="Enter your answer"><br><br>
+            <input id="checkbox" type="checkbox" name="politics"><label for="checkbox"> I Agree with the </label><a href="/termsOfService">terms of service</a><br><br>
+			<input type="submit" class = "input_submit" value="register" >
+		</form>
+	</div>
+
+</body>
+</html>
